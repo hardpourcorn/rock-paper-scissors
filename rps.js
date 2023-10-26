@@ -1,12 +1,25 @@
+function playRound(playerSelection, compSelection) {
+   
+}
+
 // Game starts with the decisions that computer can pick
 
-const arr = ["rock", "paper", "scissors"]; 
+const choices = ["rock", "paper", "scissors"]; 
 function getComputerChoice() {
-    console.log(arr[(Math.floor(Math.random() * arr.length))]);
+    return choices[(Math.floor(Math.random() * choices.length))];
 }
-getComputerChoice()
+compSelection = getComputerChoice();
+
+let getPlayerChoice = prompt("Please choose rock, paper, or scissors");
+
+if (choices.includes(getPlayerChoice)) {
+    alert("Thank you!")
+} else {
+    prompt("Please try again!")
+}
 
 // Ask player for input and compare to premade array to accuracy
+
 
 // Compare player choice to computer choice 
 
