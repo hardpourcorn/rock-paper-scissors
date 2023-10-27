@@ -3,21 +3,14 @@ const choices = ["rock", "paper", "scissors"];
 let playerCount = 0;
 let compCount = 0;
 
-
-
-
-// Ask player for input and compare to premade array to accuracy
-let getPlayerChoice = prompt ("Please select rock, paper, or scissors");
-  if (getPlayerChoice === choices) {
-        console.log(getPlayerChoice);
+function playGame() {
+    while (playerCount < 3 && compCount < 3) {
+        const playerSelection = getPlayerChoice;
+        const compSelection = getComputerChoice();
+        const roundWinner = playRound(playerSelection, compSelection);
+        updateScore(roundWinner);
+    }
 }
-const playerSelection = getPlayerChoice;
-
-// Get Random choice for computer
-function getComputerChoice() {
-    return choices[(Math.floor(Math.random() * choices.length))];
-}
-const compSelection = getComputerChoice();
 
 
 
@@ -42,11 +35,25 @@ function playRound(playerSelection, compSelection) {
     }
 }
 
-console.log(playRound(playerSelection, compSelection));
+// Ask player for input and compare to premade array to accuracy
+let getPlayerChoice = prompt ("Please select rock, paper, or scissors");
+  if (getPlayerChoice === choices) {
+        console.log(getPlayerChoice);
+}
+
+// Get Random choice for computer
+function getComputerChoice() {
+    return choices[(Math.floor(Math.random() * choices.length))];
+}
+
+function updateScore(roundWinner) {
+    if (roundWinner === "Player Wins!"){
+    playerCount++;
+        } else if (roundWinner === "Computer wins!") {
+    compCount++;
+        }
+}
+console.log(playGame());
 
 
-// Having issues where computer has not won a single round
-
-// Create conditions to decide winner.
-
-// Once winner is decided, add one to winner count until 3
+// playGame function is stuck in an infinite loop where I can't ask for another prompt. Need to find out how to ask for one input per round. 
