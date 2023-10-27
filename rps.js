@@ -3,18 +3,28 @@ const choices = ["rock", "paper", "scissors"];
 let playerCount = 0;
 let compCount = 0;
 
-function playGame() {
-    while (playerCount < 3 && compCount < 3) {
+let getPlayerChoice = prompt ("Please select rock, paper, or scissors");
+  if (getPlayerChoice === choices) {
+        console.log(getPlayerChoice);
+}
+
+function playGame(playerSelection) {
+    if (playerCount < 3 && compCount < 3) {
         const playerSelection = getPlayerChoice;
         const compSelection = getComputerChoice();
         const roundWinner = playRound(playerSelection, compSelection);
         updateScore(roundWinner);
     }
+    else if (playerCount === 3) {
+        print ("Player Wins!")
+    }
+    else if (compCount === 3) {
+        print ("Computer Wins!")
+    }
 }
 
 
-
-// Compare player choice to computer choice 
+// Ask player for input and compare to premade array to accuracy 
 function playRound(playerSelection, compSelection) {
     if (playerSelection === compSelection) {
         console.log("It's a tie!");
@@ -35,11 +45,8 @@ function playRound(playerSelection, compSelection) {
     }
 }
 
-// Ask player for input and compare to premade array to accuracy
-let getPlayerChoice = prompt ("Please select rock, paper, or scissors");
-  if (getPlayerChoice === choices) {
-        console.log(getPlayerChoice);
-}
+
+
 
 // Get Random choice for computer
 function getComputerChoice() {
@@ -53,7 +60,6 @@ function updateScore(roundWinner) {
     compCount++;
         }
 }
-console.log(playGame());
 
 
 // playGame function is stuck in an infinite loop where I can't ask for another prompt. Need to find out how to ask for one input per round. 
