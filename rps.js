@@ -10,7 +10,7 @@ let getPlayerChoice = prompt ("Please select rock, paper, or scissors");
         console.log(getPlayerChoice);
 }
 function getComputerChoice() {
-    return choices[(Math.floor(Math.random() * choices.length))];
+    return choices[(Math.floor(Math.random() * choices.length) + 1)];
 }
 
 const playerSelection = getPlayerChoice;
@@ -40,12 +40,13 @@ function playRound(playerSelection, compSelection) {
 
 function playGame() {
     if (round < 5) {
+        playRound(playerSelection, compSelection);
         console.log("Round " + round + " winner ");
         round++;
 }
 }
 
-console.log(playGame(playRound(playerSelection, compSelection)));
+console.log(playGame());
 
 
 
