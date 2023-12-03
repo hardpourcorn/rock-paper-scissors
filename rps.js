@@ -39,11 +39,14 @@ function playRound(playerSelection, compSelection) {
 }
 
 function playGame() {
-    if (round < 5) {
+    do {
+        prompt ("Please select rock, paper, or scissors");
         playRound(playerSelection, compSelection);
         console.log("Round " + round + " winner ");
         round++;
 }
+
+while (round < 5);
 }
 
 console.log(playGame());
@@ -54,4 +57,3 @@ console.log(playGame());
 
 
 console.log(playGame(playRound()));
-// playGame function is stuck in an infinite loop where I can't ask for another prompt. Need to find out how to ask for one input per round. 
