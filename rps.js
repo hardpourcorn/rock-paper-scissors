@@ -1,6 +1,7 @@
 const choices = ["rock", "paper", "scissors"];
 let round = 1;
 
+// Main function. Calls other named functions and looped to add +1 to round until round 5
 function playGame() {
     do {
         const playerSelection = getPlayerChoice();
@@ -14,19 +15,19 @@ while (round < 5);
 }
 
 
-
+// Function finds a random choice from the array and returns the response as compSelection
 function getComputerChoice() {
     return choices[(Math.floor(Math.random() * choices.length))];
 }
 
-// getPlayerChoice will return as undefined. Will define but function call cannot find definition
-
-
+// Function asks for playerChoice with prompt and returns prompt response
 function getPlayerChoice() {
     const playerChoice = prompt ("Please select rock, paper, or scissors");
     return (playerChoice);
 }
 
+
+// Function calls for playerSelection and compSlection and compares to determine winner.
 function checkWinner(playerSelection, compSelection) {
     if (playerSelection === compSelection) {
         return("It's a tie!");
