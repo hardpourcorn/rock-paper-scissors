@@ -1,7 +1,19 @@
 const choices = ["rock", "paper", "scissors"];
 let round = 1;
-let playerSelection = getPlayerChoice();
-let compSelection = getComputerChoice();
+
+function playGame() {
+    do {
+        const playerSelection = getPlayerChoice();
+        const compSelection = getComputerChoice();
+        console.log(compSelection);
+        console.log(checkWinner(playerSelection, compSelection));
+        round++;
+}
+
+while (round < 5);
+}
+
+
 
 function getComputerChoice() {
     return choices[(Math.floor(Math.random() * choices.length))];
@@ -9,14 +21,13 @@ function getComputerChoice() {
 
 // getPlayerChoice will return as undefined. Will define but function call cannot find definition
 
+
 function getPlayerChoice() {
-    let playerChoice = prompt ("Please select rock, paper, or scissors");
-    if (playerChoice === choices) {
-        console.log(playerChoice);
-    }
+    const playerChoice = prompt ("Please select rock, paper, or scissors");
+    return (playerChoice);
 }
 
-function playRound(playerSelection, compSelection) {
+function checkWinner(playerSelection, compSelection) {
     if (playerSelection === compSelection) {
         return("It's a tie!");
     }
@@ -36,15 +47,6 @@ function playRound(playerSelection, compSelection) {
     }
 }
 
-function playGame() {
-    do {getPlayerChoice();
-        getComputerChoice();
-        console.log(playRound());
-        round++;
-}
-
-while (round < 5);
-}
 
 
 console.log(playGame());
