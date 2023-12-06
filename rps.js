@@ -1,20 +1,13 @@
 const choices = ["rock", "paper", "scissors"];
-let round = 0;
 
 // Main function. Calls other named functions and looped to add +1 to round until round 5
 function playGame() {
-    do {
-        const playerSelection = getPlayerChoice();
-        const compSelection = getComputerChoice();
-        console.log(compSelection);
-        console.log(checkWinner(playerSelection, compSelection));
-        round++;
-}
-
-while (round < 5);
-if (round = 5) {
-    console.log("Game Over!")
-}
+ for (i = 0; i < 5; i++) {
+    const playerSelection = getPlayerChoice();
+    const compSelection = getComputerChoice();
+    console.log(compSelection);
+    console.log(checkWinner(playerSelection, compSelection));
+ }
 }
 
 
