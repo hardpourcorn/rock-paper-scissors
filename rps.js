@@ -10,7 +10,6 @@ function playGame() {
  }
 }
 
-
 // Function finds a random choice from the array and returns the response as compSelection
 function getComputerChoice() {
     return choices[(Math.floor(Math.random() * choices.length))];
@@ -21,7 +20,6 @@ function getPlayerChoice() {
     const playerChoice = prompt ("Please select rock, paper, or scissors");
     return (playerChoice);
 }
-
 
 // Function calls for playerSelection and compSlection and compares to determine winner.
 function checkWinner(playerSelection, compSelection) {
@@ -43,7 +41,5 @@ function checkWinner(playerSelection, compSelection) {
         return("Computer wins!");
     }
 }
-
-
 
 console.log(playGame());
